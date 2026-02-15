@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DA/PA Checker Pro</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="bg-blur bg-blur-one"></div>
+    <div class="bg-blur bg-blur-two"></div>
+
+    <main class="app-shell">
+      <header class="hero">
+        <p class="eyebrow">SEO Intelligence Tool</p>
+        <h1>DA / PA Checker Pro</h1>
+        <p class="subtitle">
+          Analyze Domain Authority and Page Authority with a modern scoring model built from backlink, trust,
+          and on-page signals.
+        </p>
+      </header>
+
+      <section class="panel">
+        <div class="tabs" role="tablist" aria-label="Checker mode">
+          <button class="tab active" data-tab="domain" role="tab" aria-selected="true">Domain Authority</button>
+          <button class="tab" data-tab="page" role="tab" aria-selected="false">Page Authority</button>
+        </div>
+
+        <div class="input-wrap">
+          <label for="targetInput" id="inputLabel">Enter domain</label>
+          <input id="targetInput" type="text" placeholder="e.g. example.com" />
+
+          <div class="metrics-grid" id="metricsGrid"></div>
+
+          <div class="button-row">
+            <button id="checkBtn" class="primary-btn">Calculate Score</button>
+            <button id="sampleBtn" class="ghost-btn">Load Sample</button>
+            <button id="clearBtn" class="ghost-btn">Reset</button>
+          </div>
+        </div>
+
+        <div class="result-wrap" aria-live="polite">
+          <div class="result-header">
+            <h2>Result</h2>
+            <span id="scoreChip" class="chip neutral">Waiting</span>
+          </div>
+
+          <div class="big-score-wrap">
+            <p class="big-score-label" id="scoreLabel">Authority Score</p>
+            <p class="big-score" id="scoreValue">--</p>
+          </div>
+
+          <p id="resultTitle" class="result-title">No analysis yet.</p>
+          <ul id="resultList" class="result-list"></ul>
+        </div>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>

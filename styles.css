@@ -1,0 +1,246 @@
+:root {
+  --card: rgba(14, 24, 54, 0.76);
+  --card-border: rgba(255, 255, 255, 0.14);
+  --text: #e5ebff;
+  --muted: #a8b4de;
+  --accent: #61e8ff;
+  --accent-2: #8e7bff;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: "Inter", system-ui, sans-serif;
+  color: var(--text);
+  background: radial-gradient(circle at 20% 10%, #1a265a, #070b1a 45%), #070b1a;
+  display: grid;
+  place-items: center;
+  padding: 2rem 1rem;
+  overflow-x: hidden;
+}
+
+.bg-blur {
+  position: fixed;
+  border-radius: 999px;
+  filter: blur(82px);
+  z-index: -1;
+}
+
+.bg-blur-one {
+  width: 18rem;
+  height: 18rem;
+  background: rgba(97, 232, 255, 0.22);
+  top: -5rem;
+  left: -2rem;
+}
+
+.bg-blur-two {
+  width: 22rem;
+  height: 22rem;
+  background: rgba(142, 123, 255, 0.2);
+  right: -5rem;
+  bottom: -6rem;
+}
+
+.app-shell {
+  width: min(1040px, 96vw);
+}
+
+.hero {
+  text-align: center;
+  margin-bottom: 1.25rem;
+}
+
+.eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--accent);
+  font-weight: 700;
+  font-size: 0.78rem;
+  margin: 0;
+}
+
+h1 {
+  margin: 0.4rem 0;
+  font-size: clamp(2rem, 3vw, 2.9rem);
+}
+
+.subtitle {
+  color: var(--muted);
+  margin: 0 auto;
+  max-width: 64ch;
+}
+
+.panel {
+  background: var(--card);
+  border: 1px solid var(--card-border);
+  border-radius: 22px;
+  backdrop-filter: blur(12px);
+  box-shadow: 0 22px 52px rgba(0, 0, 0, 0.45);
+  padding: 1.2rem;
+}
+
+.tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.tab {
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--muted);
+  border-radius: 999px;
+  padding: 0.5rem 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.tab.active {
+  color: #06111a;
+  border-color: transparent;
+  background: linear-gradient(135deg, var(--accent), #9cf0ff);
+}
+
+.input-wrap,
+.result-wrap {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  padding: 1rem;
+}
+
+label {
+  display: block;
+  color: var(--muted);
+  margin-bottom: 0.45rem;
+}
+
+input,
+.metric-input {
+  width: 100%;
+  background: rgba(0, 0, 0, 0.28);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 12px;
+  padding: 0.72rem;
+  color: var(--text);
+  font: inherit;
+}
+
+.metrics-grid {
+  margin-top: 0.85rem;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.65rem;
+}
+
+.metric-field label {
+  margin-bottom: 0.35rem;
+  font-size: 0.86rem;
+}
+
+.button-row {
+  margin-top: 0.9rem;
+  display: flex;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+}
+
+button {
+  border-radius: 11px;
+  border: 0;
+  padding: 0.62rem 0.95rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.primary-btn {
+  background: linear-gradient(135deg, var(--accent), var(--accent-2));
+  color: #06111a;
+}
+
+.ghost-btn {
+  background: rgba(255, 255, 255, 0.08);
+  color: var(--text);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.result-wrap {
+  margin-top: 1rem;
+}
+
+.result-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.big-score-wrap {
+  margin-top: 0.9rem;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 14px;
+  padding: 0.8rem;
+}
+
+.big-score-label {
+  margin: 0;
+  color: var(--muted);
+}
+
+.big-score {
+  margin: 0.35rem 0 0;
+  font-size: 2rem;
+  font-weight: 800;
+}
+
+.result-title {
+  margin: 0.8rem 0;
+}
+
+.chip {
+  border-radius: 999px;
+  padding: 0.3rem 0.6rem;
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+.chip.success { background: rgba(66, 211, 146, 0.2); color: #9ff1cb; }
+.chip.warn { background: rgba(255, 177, 86, 0.22); color: #ffd7a7; }
+.chip.fail { background: rgba(255, 103, 128, 0.2); color: #ffc0cc; }
+.chip.neutral { background: rgba(255, 255, 255, 0.12); color: #d2dcff; }
+
+.result-list {
+  margin: 0;
+  padding-left: 1.1rem;
+  color: var(--muted);
+}
+
+.result-list li + li { margin-top: 0.4rem; }
+
+@media (min-width: 960px) {
+  .panel {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 1rem;
+  }
+
+  .tabs {
+    grid-column: 1 / -1;
+  }
+
+  .result-wrap {
+    margin-top: 0;
+  }
+}
+
+@media (max-width: 640px) {
+  .metrics-grid {
+    grid-template-columns: 1fr;
+  }
+}
